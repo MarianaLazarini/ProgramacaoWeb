@@ -4,6 +4,7 @@ import Cardapio from "./pages/Cardapio";
 import Sobre from "./pages/Sobre";
 import Contato from "./pages/Contato";
 import Localizacao from "./pages/Localizacao";
+import Adicionar from "./pages/Adicionar";
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
         <Route path="/sobre" element={<Sobre />} />
         <Route path="/contato" element={<Contato />} />
         <Route path="/localizacao" element={<Localizacao />} />
+        <Route path="/adicionar" element={<Adicionar />} />
       </Routes>
     </Router>
   );

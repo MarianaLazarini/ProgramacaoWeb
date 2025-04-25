@@ -39,6 +39,7 @@ export default function Header() {
           <Link to="/sobre" style={linkStyle}>Sobre</Link>
           <Link to="/contato" style={linkStyle}>Contato</Link>
           <Link to="/localizacao" style={linkStyle}>Localização</Link>
+          <Link to="/adicionar" style={linkStyle}>Adicionar</Link>
         </nav>
       </header>
     </div>
