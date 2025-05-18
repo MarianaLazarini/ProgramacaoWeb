@@ -17,10 +17,17 @@ class ProdutoController extends Controller
 
     public function store(Request $request)
     {
-        $produto = Produto::create($request->all());
+    // Validação dos dados recebidos
+    $validated = $request->validate([
+        'nome' => 'required|string|max:255',
+        'descricao' => 'nullable|string',
+        'preco' => 'required|numeric',
+        'imagem' => 'nullable|string',
+    ]);
 
-        return response()
-            ->json($produto, 201)
-            ->header('Access-Control-Allow-Origin', '*');
+    // Cria o produto com os dados validados
+    $produto = Produto::create($validated);
+
+    return response()->json($produto, 201);
     }
 }
