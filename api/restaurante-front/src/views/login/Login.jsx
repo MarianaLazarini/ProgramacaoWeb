@@ -1,11 +1,9 @@
 import {createRef, useState} from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axiosClient from '../../axiosClient';
-import { useLogin } from '../../context/ContextProvider';
-import { useValidarDadosLogin } from '../../rules/LoginValidationRules';
+import { useLogin } from '../../context/ContextProvider'; 
+import { useValidarDadosLogin } from '../../rules/LoginValidatorRules';
 import MensagemErro from '../../components/mensagens/MensagemErro';
-
-
 
 export default function Login(){
 
@@ -43,8 +41,9 @@ export default function Login(){
                     console.log(data);
                      _setToken(data.token);
                      _setUser(data.user);
+                     localStorage.setItem("token", data.token);
                      setMessage('login realizado com sucesso '+login);
-                     navigate('/dashboard');
+                     navigate('/adicionar');
                    })
                    .catch((erro)=>{
                      console.log(erro);

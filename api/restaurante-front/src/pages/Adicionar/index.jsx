@@ -1,5 +1,5 @@
 import { useState } from "react";
-import axios from "axiosClient";
+//import axios from "axiosClient";
 
 export default function Adicionar() {
   const [form, setForm] = useState({
